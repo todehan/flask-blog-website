@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Index Page"
+    article = dict()
+    article["title"] = "Ana Sayfa"
+    article["author"] = "todehan"
+    return render_template("index.html", article = article)
 
 @app.route("/about")
 def about():
