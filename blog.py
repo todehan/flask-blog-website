@@ -8,11 +8,15 @@ def index():
 
 @app.route("/about")
 def about():
-    return "About Page"    
+    return render_template("about.html")   
 
 @app.route("/contact")
 def contact():
-    return "Contact Page"
+    return render_template("contact.html")
+
+@app.route("/articles")
+def articles():
+    return render_template("articles.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
